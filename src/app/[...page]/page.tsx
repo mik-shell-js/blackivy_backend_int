@@ -12,7 +12,7 @@ builder.init("706c4001d29248a197cd4cb1e707e1f2");
 export default async function Page({
   params,
 }: {
-  params: { page?: string | string[] };
+  params: Record<string, string | string[] | undefined>;
 }) {
   const model = "page";
 
