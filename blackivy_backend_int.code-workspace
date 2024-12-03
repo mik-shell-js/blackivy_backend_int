@@ -9,5 +9,8 @@
 		{
 			"path": "src"
 		}
-	]
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "src"
+	}
 }
