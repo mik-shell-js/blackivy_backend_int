@@ -4,6 +4,7 @@ import { ComponentProps } from "react";
 import { BuilderComponent, useIsPreviewing } from "@builder.io/react"; 
 import { builder } from '@builder.io/sdk';
 import DefaultErrorPage from "next/error";
+import React from "react";
 
 type BuilderPageProps = ComponentProps<typeof BuilderComponent>;
 

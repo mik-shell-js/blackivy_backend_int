@@ -1,7 +1,8 @@
 // Example file structure, app/[...page]/page.tsx
 // You could alternatively use src/app/[...page]/page.tsx
 import { builder } from "@builder.io/sdk";
-import { RenderBuilderContent } from "components/builder";
+import { RenderBuilderContent } from "../components/builder";
+import React from "react";
 
 
 // Replace with your Public API Key
