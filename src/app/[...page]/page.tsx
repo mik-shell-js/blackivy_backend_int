@@ -8,15 +8,17 @@ import React from "react";
 // Replace with your Public API Key
 builder.init("706c4001d29248a197cd4cb1e707e1f2");
 
-// Define your async page function
+export async function generateStaticParams() {
+  return []; // Add any pre-rendered routes if necessary
+}
+
 export default async function Page({
   params,
 }: {
-  params: Record<string, string | string[] | undefined>;
+  params: { page?: string | string[] };
 }) {
   const model = "page";
 
-  // Resolve URL path dynamically
   const urlPath =
     "/" + (Array.isArray(params.page) ? params.page.join("/") : params.page || "");
 
