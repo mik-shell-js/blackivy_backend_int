@@ -10,18 +10,23 @@ builder.init("706c4001d29248a197cd4cb1e707e1f2");
 
 interface PageProps {
   params: {
-    page: string[];
+    page: string | string[]; // Allow a single string or an array of strings
   };
 }
 
-export default async function Page(props: PageProps) {
+export default async function Page({params}: PageProps) {
   const model = "page";
+
+  // Check if `params.page` is an array or a string
+  const urlPath =
+  "/" + (Array.isArray(params.page) ? params.page.join("/") : params.page || "");
+
   const content = await builder
     // Get the page content from Builder with the specified options
-    .get("home", {
+    .get(model, {
       userAttributes: {
         // Use the page path specified in the URL to fetch the content
-        urlPath: "/" + (props?.params?.page?.join("/") || ""),
+        urlPath,
       },
       // Set prerender to false to return JSON instead of HTML
       prerender: false,
