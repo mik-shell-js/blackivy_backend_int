@@ -21,9 +21,5 @@ export default async function Page({
     })
     .toPromise();
 
-  if (!content) {
-    return <div>Page Not Found</div>;
-  }
-
   return <RenderBuilderContent content={content} model={model} />;
 }
